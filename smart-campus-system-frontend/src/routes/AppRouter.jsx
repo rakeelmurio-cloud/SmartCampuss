@@ -9,6 +9,10 @@ import MyTicketsPage from '../pages/MyTicketsPage'
 import TicketDetailsPage from '../pages/TicketDetailsPage'
 import AdminTicketsPage from '../pages/AdminTicketsPage'
 import TechnicianTicketsPage from '../pages/TechnicianTicketsPage'
+import ResourcesPage from '../pages/ResourcesPage'
+import CreateBookingPage from '../pages/CreateBookingPage'
+import MyBookingsPage from '../pages/MyBookingsPage'
+import AdminBookingsPage from '../pages/AdminBookingsPage'
 import { getToken, hasToken } from '../utils/token'
 
 function ProtectedRoute({ children }) {
@@ -59,6 +63,30 @@ function AppRouter() {
         }
       />
       <Route
+        path="/resources"
+        element={
+          <ProtectedRoute>
+            <ResourcesPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/bookings/create"
+        element={
+          <ProtectedRoute>
+            <CreateBookingPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/bookings/my"
+        element={
+          <ProtectedRoute>
+            <MyBookingsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/tickets/create"
         element={
           <ProtectedRoute>
@@ -87,6 +115,14 @@ function AppRouter() {
         element={
           <ProtectedRoute>
             <AdminTicketsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/bookings"
+        element={
+          <ProtectedRoute>
+            <AdminBookingsPage />
           </ProtectedRoute>
         }
       />

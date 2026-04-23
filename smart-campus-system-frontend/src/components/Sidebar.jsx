@@ -2,9 +2,13 @@ import { Link, useLocation } from 'react-router-dom'
 
 const navItems = [
   { label: 'Dashboard', to: '/dashboard', roles: ['USER', 'ADMIN', 'TECHNICIAN'] },
+  { label: 'Resources', to: '/resources', roles: ['USER', 'ADMIN', 'TECHNICIAN'] },
+  { label: 'Book Resource', to: '/bookings/create', roles: ['USER', 'ADMIN', 'TECHNICIAN'] },
+  { label: 'My Bookings', to: '/bookings/my', roles: ['USER', 'ADMIN', 'TECHNICIAN'] },
   { label: 'Create Ticket', to: '/tickets/create', roles: ['USER', 'ADMIN', 'TECHNICIAN'] },
   { label: 'My Tickets', to: '/tickets/my', roles: ['USER', 'ADMIN', 'TECHNICIAN'] },
   { label: 'Admin Tickets', to: '/admin/tickets', roles: ['ADMIN'] },
+  { label: 'Admin Bookings', to: '/admin/bookings', roles: ['ADMIN'] },
   { label: 'Assigned Tickets', to: '/technician/tickets', roles: ['TECHNICIAN'] },
 ]
 

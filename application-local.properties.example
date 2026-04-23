@@ -1,0 +1,10 @@
+spring.mongodb.uri=mongodb+srv://username:password@cluster.mongodb.net/?appName=smart-campus-system
+spring.mongodb.database=smart_campus_db
+spring.security.oauth2.client.registration.google.client-id=your-google-client-id
+spring.security.oauth2.client.registration.google.client-secret=your-google-client-secret
+spring.security.oauth2.client.registration.google.scope=email,profile
+app.jwt.secret=your-base64-jwt-secret
+app.jwt.expiration-ms=86400000
+app.frontend.url=http://localhost:5173
+# disable default admin/tech/student seeding in production if needed
+app.bootstrap.enabled=true

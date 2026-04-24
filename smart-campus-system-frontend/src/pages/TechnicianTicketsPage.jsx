@@ -56,14 +56,14 @@ function TechnicianTicketsPage() {
     navigate('/', { replace: true })
   }
 
-  const handleStatus = async (ticketId, status) => {
-    try {
-      await updateTicketStatus(ticketId, { status })
-      await loadTickets()
-    } catch (err) {
-      setError(err?.response?.data?.message || 'Unable to update status.')
-    }
-  }
+  // const handleStatus = async (ticketId, status) => {
+  //   try {
+  //     await updateTicketStatus(ticketId, { status })
+  //     await loadTickets()
+  //   } catch (err) {
+  //     setError(err?.response?.data?.message || 'Unable to update status.')
+  //   }
+  // }
 
   const handleResolve = async (ticketId) => {
     const note = notes[ticketId] || ''

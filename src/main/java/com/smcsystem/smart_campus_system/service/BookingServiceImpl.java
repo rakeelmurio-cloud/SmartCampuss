@@ -70,17 +70,17 @@ public class BookingServiceImpl implements BookingService {
         return mapToResponse(saved, resource);
     }
 
-    @Override
-    public BookingResponse getById(String id) {
-        User currentUser = getAuthenticatedUser();
-        Booking booking = bookingRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Booking not found"));
+    // @Override
+    // public BookingResponse getById(String id) {
+    //     User currentUser = getAuthenticatedUser();
+    //     Booking booking = bookingRepository.findById(id)
+    //             .orElseThrow(() -> new ResourceNotFoundException("Booking not found"));
 
-        ensureCanView(currentUser, booking);
+    //     ensureCanView(currentUser, booking);
 
-        Resource resource = resourceRepository.findById(booking.getResourceId()).orElse(null);
-        return mapToResponse(booking, resource);
-    }
+    //     Resource resource = resourceRepository.findById(booking.getResourceId()).orElse(null);
+    //     return mapToResponse(booking, resource);
+    // }
 
     @Override
     public List<BookingResponse> getMyBookings() {

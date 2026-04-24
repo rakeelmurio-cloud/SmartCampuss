@@ -19,18 +19,18 @@ import java.time.LocalDateTime;
 @Document(collection = "bookings")
 public class Booking {
 
-    @Id
-    private String id;
+    // @Id
+    // private String id;
 
-    private String resourceId;
-    private String userId;
-    private String purpose;
-    private Integer expectedAttendees;
-    private LocalDateTime startDateTime;
-    private LocalDateTime endDateTime;
-    private BookingStatus status;
-    private String rejectionReason;
-    private String cancellationReason;
+    // private String resourceId;
+    // private String userId;
+    // private String purpose;
+    // private Integer expectedAttendees;
+    // private LocalDateTime startDateTime;
+    // private LocalDateTime endDateTime;
+    // private BookingStatus status;
+    // private String rejectionReason;
+    // private String cancellationReason;
 
     @CreatedDate
     private LocalDateTime createdAt;

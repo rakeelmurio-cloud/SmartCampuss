@@ -43,10 +43,10 @@ public class ResourceController {
         return ResponseEntity.ok(resourceService.update(id, request));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ResourceResponse> getById(@PathVariable String id) {
-        return ResponseEntity.ok(resourceService.getById(id));
-    }
+    // @GetMapping("/{id}")
+    // public ResponseEntity<ResourceResponse> getById(@PathVariable String id) {
+    //     return ResponseEntity.ok(resourceService.getById(id));
+    // }
 
     @GetMapping
     public ResponseEntity<List<ResourceResponse>> getAll(

@@ -22,14 +22,14 @@ import java.util.List;
 @Document(collection = "resources")
 public class Resource {
 
-    @Id
-    private String id;
+    // @Id
+    // private String id;
 
-    private String name;
-    private ResourceType type;
-    private Integer capacity;
-    private String location;
-    private String description;
+    // private String name;
+    // private ResourceType type;
+    // private Integer capacity;
+    // private String location;
+    // private String description;
     @Builder.Default
     private List<AvailabilityWindow> availability = new ArrayList<>();
     private ResourceStatus status;

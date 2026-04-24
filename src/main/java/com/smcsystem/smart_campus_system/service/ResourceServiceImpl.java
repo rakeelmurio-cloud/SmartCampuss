@@ -57,9 +57,9 @@ public class ResourceServiceImpl implements ResourceService {
             resource.setType(request.getType());
         }
 
-        if (request.getCapacity() != null) {
-            resource.setCapacity(request.getCapacity());
-        }
+        // if (request.getCapacity() != null) {
+        //     resource.setCapacity(request.getCapacity());
+        // }
 
         if (request.getLocation() != null) {
             resource.setLocation(request.getLocation().trim());

@@ -35,10 +35,10 @@ public class BookingController {
         return new ResponseEntity<>(bookingService.create(request), HttpStatus.CREATED);
     }
 //get my bookings
-    // @GetMapping("/my")
-    // public ResponseEntity<List<BookingResponse>> getMyBookings() {
-    //     return ResponseEntity.ok(bookingService.getMyBookings());
-    // }
+    @GetMapping("/my")
+    public ResponseEntity<List<BookingResponse>> getMyBookings() {
+        return ResponseEntity.ok(bookingService.getMyBookings());
+    }
 //get all bookings (admin only)
     @PreAuthorize("hasAuthority('ADMIN')")
 //get all bookings with optional filters for status and resource id
@@ -66,10 +66,10 @@ public class BookingController {
     }
 //cancel booking (user can cancel their own booking, admin can cancel any booking)
     @PatchMapping("/{id}/cancel")
-    public ResponseEntity<BookingResponse> cancel(
-            @PathVariable String id,
-            @RequestBody CancelBookingRequest request
-    ) {
-        return ResponseEntity.ok(bookingService.cancel(id, request));
-    }
+    // public ResponseEntity<BookingResponse> cancel(
+    //         @PathVariable String id,
+    //         @RequestBody CancelBookingRequest request
+    // ) {
+    //     return ResponseEntity.ok(bookingService.cancel(id, request));
+    // }
 }

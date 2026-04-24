@@ -6,9 +6,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface TicketCommentRepository extends MongoRepository<TicketComment, String> {
+// public interface TicketCommentRepository extends MongoRepository<TicketComment, String> {
 
-    List<TicketComment> findByTicketId(String ticketId);
+//     List<TicketComment> findByTicketId(String ticketId);
 
-    Optional<TicketComment> findByIdAndTicketId(String id, String ticketId);
-}
+//     Optional<TicketComment> findByIdAndTicketId(String id, String ticketId);
+// }

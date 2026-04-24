@@ -7,7 +7,8 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-// @Data
+// DTO for creating a new booking request
+@Data
 // public class CreateBookingRequest {
 
 //     @NotBlank(message = "Resource id is required")
@@ -17,12 +18,12 @@ import java.time.LocalDateTime;
 //     @Future(message = "Start time must be in the future")
 //     private LocalDateTime startDateTime;
 
-//     @NotNull(message = "End date/time is required")
-//     @Future(message = "End time must be in the future")
-//     private LocalDateTime endDateTime;
+    @NotNull(message = "End date/time is required")
+    @Future(message = "End time must be in the future")
+    private LocalDateTime endDateTime;
 
-//     @NotBlank(message = "Purpose is required")
-//     private String purpose;
+    @NotBlank(message = "Purpose is required")
+    private String purpose;
 
-//     private Integer expectedAttendees;
-// }
+    private Integer expectedAttendees;
+}

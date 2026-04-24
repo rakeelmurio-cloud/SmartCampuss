@@ -70,17 +70,17 @@ public class BookingServiceImpl implements BookingService {
         return mapToResponse(saved, resource);
     }
 
-    // @Override
-    // public BookingResponse getById(String id) {
-    //     User currentUser = getAuthenticatedUser();
-    //     Booking booking = bookingRepository.findById(id)
-    //             .orElseThrow(() -> new ResourceNotFoundException("Booking not found"));
+    @Override
+    public BookingResponse getById(String id) {
+        User currentUser = getAuthenticatedUser();
+        Booking booking = bookingRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Booking not found"));
 
-    //     ensureCanView(currentUser, booking);
+        ensureCanView(currentUser, booking);
 
-    //     Resource resource = resourceRepository.findById(booking.getResourceId()).orElse(null);
-    //     return mapToResponse(booking, resource);
-    // }
+        Resource resource = resourceRepository.findById(booking.getResourceId()).orElse(null);
+        return mapToResponse(booking, resource);
+    }
 
     @Override
     public List<BookingResponse> getMyBookings() {
@@ -208,24 +208,24 @@ public class BookingServiceImpl implements BookingService {
         }
     }
 
-    private BookingResponse mapToResponse(Booking booking, Resource resource) {
-        return BookingResponse.builder()
-                .id(booking.getId())
-                .resourceId(booking.getResourceId())
-                .resourceName(resource != null ? resource.getName() : null)
-                .resourceLocation(resource != null ? resource.getLocation() : null)
-                .userId(booking.getUserId())
-                .purpose(booking.getPurpose())
-                .expectedAttendees(booking.getExpectedAttendees())
-                .startDateTime(booking.getStartDateTime())
-                .endDateTime(booking.getEndDateTime())
-                .status(booking.getStatus())
-                .rejectionReason(booking.getRejectionReason())
-                .cancellationReason(booking.getCancellationReason())
-                .createdAt(booking.getCreatedAt())
-                .updatedAt(booking.getUpdatedAt())
-                .build();
-    }
+    // private BookingResponse mapToResponse(Booking booking, Resource resource) {
+    //     return BookingResponse.builder()
+    //             .id(booking.getId())
+    //             .resourceId(booking.getResourceId())
+    //             .resourceName(resource != null ? resource.getName() : null)
+    //             .resourceLocation(resource != null ? resource.getLocation() : null)
+    //             .userId(booking.getUserId())
+    //             .purpose(booking.getPurpose())
+    //             .expectedAttendees(booking.getExpectedAttendees())
+    //             .startDateTime(booking.getStartDateTime())
+    //             .endDateTime(booking.getEndDateTime())
+    //             .status(booking.getStatus())
+    //             .rejectionReason(booking.getRejectionReason())
+    //             .cancellationReason(booking.getCancellationReason())
+    //             .createdAt(booking.getCreatedAt())
+    //             .updatedAt(booking.getUpdatedAt())
+    //             .build();
+    // }
 
     private Map<String, Resource> loadResourcesFor(List<Booking> bookings) {
         List<String> resourceIds = bookings.stream()

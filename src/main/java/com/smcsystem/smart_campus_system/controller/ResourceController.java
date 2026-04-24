@@ -48,13 +48,13 @@ public class ResourceController {
         return ResponseEntity.ok(resourceService.getById(id));
     }
 
-    @GetMapping
-    public ResponseEntity<List<ResourceResponse>> getAll(
-            @RequestParam Optional<String> type,
-            @RequestParam Optional<String> location,
-            @RequestParam Optional<Integer> minCapacity,
-            @RequestParam Optional<String> status
-    ) {
-        return ResponseEntity.ok(resourceService.getAll(type, location, minCapacity, status));
-    }
-}
+//     @GetMapping
+//     public ResponseEntity<List<ResourceResponse>> getAll(
+//             @RequestParam Optional<String> type,
+//             @RequestParam Optional<String> location,
+//             @RequestParam Optional<Integer> minCapacity,
+//             @RequestParam Optional<String> status
+//     ) {
+//         return ResponseEntity.ok(resourceService.getAll(type, location, minCapacity, status));
+//     }
+// }

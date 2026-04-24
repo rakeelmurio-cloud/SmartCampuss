@@ -81,14 +81,14 @@ function ResourcesPage() {
     }
   }
 
-  const filteredSummary = useMemo(
-    () => ({
-      total: resources.length,
-      active: resources.filter((r) => r.status === 'ACTIVE').length,
-      out: resources.filter((r) => r.status === 'OUT_OF_SERVICE').length,
-    }),
-    [resources]
-  )
+  // const filteredSummary = useMemo(
+  //   () => ({
+  //     total: resources.length,
+  //     active: resources.filter((r) => r.status === 'ACTIVE').length,
+  //     out: resources.filter((r) => r.status === 'OUT_OF_SERVICE').length,
+  //   }),
+  //   [resources]
+  // )
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target

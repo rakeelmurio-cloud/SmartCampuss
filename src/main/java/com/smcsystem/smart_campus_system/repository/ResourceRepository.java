@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface ResourceRepository extends MongoRepository<Resource, String> {
     List<Resource> findByType(ResourceType type);
-    List<Resource> findByStatus(ResourceStatus status);
+    // List<Resource> findByStatus(ResourceStatus status);
 }

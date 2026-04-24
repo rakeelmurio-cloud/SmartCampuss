@@ -1,8 +1,8 @@
 package com.smcsystem.smart_campus_system.service;
 
-import com.smcsystem.smart_campus_system.dto.request.CreateResourceRequest;
-import com.smcsystem.smart_campus_system.dto.request.UpdateResourceRequest;
-import com.smcsystem.smart_campus_system.dto.response.ResourceResponse;
+// import com.smcsystem.smart_campus_system.dto.request.CreateResourceRequest;
+// import com.smcsystem.smart_campus_system.dto.request.UpdateResourceRequest;
+// import com.smcsystem.smart_campus_system.dto.response.ResourceResponse;
 
 import java.util.List;
 import java.util.Optional;

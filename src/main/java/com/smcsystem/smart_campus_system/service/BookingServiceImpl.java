@@ -71,16 +71,16 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public BookingResponse getById(String id) {
-        User currentUser = getAuthenticatedUser();
-        Booking booking = bookingRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Booking not found"));
+    // public BookingResponse getById(String id) {
+    //     User currentUser = getAuthenticatedUser();
+    //     Booking booking = bookingRepository.findById(id)
+    //             .orElseThrow(() -> new ResourceNotFoundException("Booking not found"));
 
-        ensureCanView(currentUser, booking);
+    //     ensureCanView(currentUser, booking);
 
-        Resource resource = resourceRepository.findById(booking.getResourceId()).orElse(null);
-        return mapToResponse(booking, resource);
-    }
+    //     Resource resource = resourceRepository.findById(booking.getResourceId()).orElse(null);
+    //     return mapToResponse(booking, resource);
+    // }
 
     @Override
     public List<BookingResponse> getMyBookings() {
@@ -267,13 +267,13 @@ public class BookingServiceImpl implements BookingService {
         );
     }
 
-    // private User getAuthenticatedUser() {
-    //     var authentication = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
+    private User getAuthenticatedUser() {
+        var authentication = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
 
-    //     if (authentication == null || !(authentication.getPrincipal() instanceof User user)) {
-    //         throw new UnauthorizedException("User not authenticated");
-    //     }
+        if (authentication == null || !(authentication.getPrincipal() instanceof User user)) {
+            throw new UnauthorizedException("User not authenticated");
+        }
 
-    //     return user;
-    // }
+        return user;
+    }
 }

@@ -208,24 +208,24 @@ public class BookingServiceImpl implements BookingService {
         }
     }
 
-    // private BookingResponse mapToResponse(Booking booking, Resource resource) {
-    //     return BookingResponse.builder()
-    //             .id(booking.getId())
-    //             .resourceId(booking.getResourceId())
-    //             .resourceName(resource != null ? resource.getName() : null)
-    //             .resourceLocation(resource != null ? resource.getLocation() : null)
-    //             .userId(booking.getUserId())
-    //             .purpose(booking.getPurpose())
-    //             .expectedAttendees(booking.getExpectedAttendees())
-    //             .startDateTime(booking.getStartDateTime())
-    //             .endDateTime(booking.getEndDateTime())
-    //             .status(booking.getStatus())
-    //             .rejectionReason(booking.getRejectionReason())
-    //             .cancellationReason(booking.getCancellationReason())
-    //             .createdAt(booking.getCreatedAt())
-    //             .updatedAt(booking.getUpdatedAt())
-    //             .build();
-    // }
+    private BookingResponse mapToResponse(Booking booking, Resource resource) {
+        return BookingResponse.builder()
+                .id(booking.getId())
+                .resourceId(booking.getResourceId())
+                .resourceName(resource != null ? resource.getName() : null)
+                .resourceLocation(resource != null ? resource.getLocation() : null)
+                .userId(booking.getUserId())
+                .purpose(booking.getPurpose())
+                .expectedAttendees(booking.getExpectedAttendees())
+                .startDateTime(booking.getStartDateTime())
+                .endDateTime(booking.getEndDateTime())
+                .status(booking.getStatus())
+                .rejectionReason(booking.getRejectionReason())
+                .cancellationReason(booking.getCancellationReason())
+                .createdAt(booking.getCreatedAt())
+                .updatedAt(booking.getUpdatedAt())
+                .build();
+    }
 
     private Map<String, Resource> loadResourcesFor(List<Booking> bookings) {
         List<String> resourceIds = bookings.stream()
@@ -267,13 +267,13 @@ public class BookingServiceImpl implements BookingService {
         );
     }
 
-    private User getAuthenticatedUser() {
-        var authentication = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
+    // private User getAuthenticatedUser() {
+    //     var authentication = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
 
-        if (authentication == null || !(authentication.getPrincipal() instanceof User user)) {
-            throw new UnauthorizedException("User not authenticated");
-        }
+    //     if (authentication == null || !(authentication.getPrincipal() instanceof User user)) {
+    //         throw new UnauthorizedException("User not authenticated");
+    //     }
 
-        return user;
-    }
+    //     return user;
+    // }
 }

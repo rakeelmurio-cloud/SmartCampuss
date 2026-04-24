@@ -7,22 +7,22 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Data
-public class CreateBookingRequest {
+// @Data
+// public class CreateBookingRequest {
 
-    @NotBlank(message = "Resource id is required")
-    private String resourceId;
+//     @NotBlank(message = "Resource id is required")
+//     private String resourceId;
 
-    @NotNull(message = "Start date/time is required")
-    @Future(message = "Start time must be in the future")
-    private LocalDateTime startDateTime;
+//     @NotNull(message = "Start date/time is required")
+//     @Future(message = "Start time must be in the future")
+//     private LocalDateTime startDateTime;
 
-    @NotNull(message = "End date/time is required")
-    @Future(message = "End time must be in the future")
-    private LocalDateTime endDateTime;
+//     @NotNull(message = "End date/time is required")
+//     @Future(message = "End time must be in the future")
+//     private LocalDateTime endDateTime;
 
-    @NotBlank(message = "Purpose is required")
-    private String purpose;
+//     @NotBlank(message = "Purpose is required")
+//     private String purpose;
 
-    private Integer expectedAttendees;
-}
+//     private Integer expectedAttendees;
+// }

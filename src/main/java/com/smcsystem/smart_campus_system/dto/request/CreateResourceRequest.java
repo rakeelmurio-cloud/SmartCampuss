@@ -9,25 +9,25 @@ import lombok.Data;
 
 import java.util.List;
 
-@Data
-public class CreateResourceRequest {
+// @Data
+// public class CreateResourceRequest {
 
-    @NotBlank(message = "Name is required")
-    private String name;
+//     @NotBlank(message = "Name is required")
+//     private String name;
 
-    @NotNull(message = "Resource type is required")
-    private ResourceType type;
+//     @NotNull(message = "Resource type is required")
+//     private ResourceType type;
 
-    @NotNull(message = "Capacity is required")
-    @Min(value = 1, message = "Capacity must be at least 1")
-    private Integer capacity;
+//     @NotNull(message = "Capacity is required")
+//     @Min(value = 1, message = "Capacity must be at least 1")
+//     private Integer capacity;
 
-    @NotBlank(message = "Location is required")
-    private String location;
+//     @NotBlank(message = "Location is required")
+//     private String location;
 
-    private String description;
+//     private String description;
 
-    private List<AvailabilityWindowRequest> availability;
+//     private List<AvailabilityWindowRequest> availability;
 
-    private ResourceStatus status = ResourceStatus.ACTIVE;
-}
+//     private ResourceStatus status = ResourceStatus.ACTIVE;
+// }

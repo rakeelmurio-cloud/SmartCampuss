@@ -53,14 +53,14 @@ public class BookingController {
         return ResponseEntity.ok(bookingService.getById(id));
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
-    @PatchMapping("/{id}/status")
-    public ResponseEntity<BookingResponse> updateStatus(
-            @PathVariable String id,
-            @Valid @RequestBody UpdateBookingStatusRequest request
-    ) {
-        return ResponseEntity.ok(bookingService.updateStatus(id, request));
-    }
+    // @PreAuthorize("hasAuthority('ADMIN')")
+    // @PatchMapping("/{id}/status")
+    // public ResponseEntity<BookingResponse> updateStatus(
+    //         @PathVariable String id,
+    //         @Valid @RequestBody UpdateBookingStatusRequest request
+    // ) {
+    //     return ResponseEntity.ok(bookingService.updateStatus(id, request));
+    // }
 
     @PatchMapping("/{id}/cancel")
     public ResponseEntity<BookingResponse> cancel(

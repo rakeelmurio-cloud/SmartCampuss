@@ -44,10 +44,10 @@ public class TicketController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("/my")
-    public ResponseEntity<List<TicketResponse>> getMyTickets() {
-        return ResponseEntity.ok(ticketService.getMyTickets());
-    }
+    // @GetMapping("/my")
+    // public ResponseEntity<List<TicketResponse>> getMyTickets() {
+    //     return ResponseEntity.ok(ticketService.getMyTickets());
+    // }
 
     @GetMapping("/assigned")
     public ResponseEntity<List<TicketResponse>> getAssignedTickets() {

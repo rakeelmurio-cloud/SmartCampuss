@@ -64,28 +64,28 @@ function CreateBookingPage() {
       return
     }
 
-    try {
-      await createBooking({
-        ...form,
-        expectedAttendees: form.expectedAttendees
-          ? Number(form.expectedAttendees)
-          : null,
-      })
-      setNotice('Booking request submitted. Awaiting approval.')
-      setForm({
-        resourceId: form.resourceId,
-        startDateTime: '',
-        endDateTime: '',
-        purpose: '',
-        expectedAttendees: '',
-      })
-    } catch (err) {
-      setError(
-        err?.response?.data?.message ||
-          'Unable to submit the booking right now.'
-      )
-    }
-  }
+  //   try {
+  //     await createBooking({
+  //       ...form,
+  //       expectedAttendees: form.expectedAttendees
+  //         ? Number(form.expectedAttendees)
+  //         : null,
+  //     })
+  //     setNotice('Booking request submitted. Awaiting approval.')
+  //     setForm({
+  //       resourceId: form.resourceId,
+  //       startDateTime: '',
+  //       endDateTime: '',
+  //       purpose: '',
+  //       expectedAttendees: '',
+  //     })
+  //   } catch (err) {
+  //     setError(
+  //       err?.response?.data?.message ||
+  //         'Unable to submit the booking right now.'
+  //     )
+  //   }
+  // }
 
   if (!user) return null
 

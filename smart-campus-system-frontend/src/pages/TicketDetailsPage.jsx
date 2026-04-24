@@ -129,18 +129,18 @@ function TicketDetailsPage() {
     setEditText(comment.comment)
   }
 
-  // const handleUpdateComment = async (e) => {
-  //   e.preventDefault()
-  //   if (!editingId) return
-  //   try {
-  //     await updateComment(id, editingId, { comment: editText.trim() })
-  //     setEditingId('')
-  //     setEditText('')
-  //     await loadTicket()
-  //   } catch (err) {
-  //     setError(err?.response?.data?.message || 'Unable to update comment.')
-  //   }
-  // }
+  const handleUpdateComment = async (e) => {
+    e.preventDefault()
+    if (!editingId) return
+    try {
+      await updateComment(id, editingId, { comment: editText.trim() })
+      setEditingId('')
+      setEditText('')
+      await loadTicket()
+    } catch (err) {
+      setError(err?.response?.data?.message || 'Unable to update comment.')
+    }
+  }
 
   const handleDeleteComment = async (commentId) => {
     try {

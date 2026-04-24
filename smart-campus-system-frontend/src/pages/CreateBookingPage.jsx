@@ -122,25 +122,25 @@ function CreateBookingPage() {
         <form
           onSubmit={handleSubmit}
           className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-2"
-        >
-          <div className="md:col-span-2">
-            <label className="mb-2 block text-sm font-semibold text-slate-700">
-              Resource
-            </label>
-            <select
-              name="resourceId"
-              value={form.resourceId}
-              onChange={handleChange}
-              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-teal-400 focus:ring-2 focus:ring-teal-100"
-            >
-              <option value="">Select a resource</option>
-              {resources.map((res) => (
-                <option key={res.id} value={res.id}>
-                  {res.name} — {res.location} ({res.type})
-                </option>
-              ))}
-            </select>
-          </div>
+        // >
+        //   <div className="md:col-span-2">
+        //     <label className="mb-2 block text-sm font-semibold text-slate-700">
+        //       Resource
+        //     </label>
+        //     <select
+        //       name="resourceId"
+        //       value={form.resourceId}
+        //       onChange={handleChange}
+        //       className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-teal-400 focus:ring-2 focus:ring-teal-100"
+        //     >
+        //       <option value="">Select a resource</option>
+        //       {resources.map((res) => (
+        //         <option key={res.id} value={res.id}>
+        //           {res.name} — {res.location} ({res.type})
+        //         </option>
+        //       ))}
+        //     </select>
+        //   </div>
 
           <div>
             <label className="mb-2 block text-sm font-semibold text-slate-700">

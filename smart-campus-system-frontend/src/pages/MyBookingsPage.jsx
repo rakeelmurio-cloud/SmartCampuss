@@ -50,18 +50,18 @@ function MyBookingsPage() {
     }
   }
 
-  const handleCancel = async (bookingId) => {
-    try {
-      await cancelBooking(bookingId, { reason: 'Cancelled by user' })
-      setNotice('Booking cancelled.')
-      await fetchBookings()
-    } catch (err) {
-      setError(
-        err?.response?.data?.message ||
-          'Unable to cancel this booking right now.'
-      )
-    }
-  }
+  // const handleCancel = async (bookingId) => {
+  //   try {
+  //     await cancelBooking(bookingId, { reason: 'Cancelled by user' })
+  //     setNotice('Booking cancelled.')
+  //     await fetchBookings()
+  //   } catch (err) {
+  //     setError(
+  //       err?.response?.data?.message ||
+  //         'Unable to cancel this booking right now.'
+  //     )
+  //   }
+  // }
 
   const onLogout = () => {
     removeToken()

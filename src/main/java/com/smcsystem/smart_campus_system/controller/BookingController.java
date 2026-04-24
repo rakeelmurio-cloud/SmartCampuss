@@ -29,17 +29,19 @@ public class BookingController {
 
     private final BookingService bookingService;
 
+//create booking
     @PostMapping
     public ResponseEntity<BookingResponse> create(@Valid @RequestBody CreateBookingRequest request) {
         return new ResponseEntity<>(bookingService.create(request), HttpStatus.CREATED);
     }
-
+//get my bookings
     @GetMapping("/my")
     public ResponseEntity<List<BookingResponse>> getMyBookings() {
         return ResponseEntity.ok(bookingService.getMyBookings());
     }
-
+//get all bookings (admin only)
     @PreAuthorize("hasAuthority('ADMIN')")
+//get all bookings with optional filters for status and resource id
     @GetMapping
     public ResponseEntity<List<BookingResponse>> getAll(
             @RequestParam Optional<String> status,
@@ -52,21 +54,22 @@ public class BookingController {
     public ResponseEntity<BookingResponse> getById(@PathVariable String id) {
         return ResponseEntity.ok(bookingService.getById(id));
     }
-
+//update booking status (admin only)
     @PreAuthorize("hasAuthority('ADMIN')")
     @PatchMapping("/{id}/status")
+//update booking status with optional reason for rejection or cancellation    
     public ResponseEntity<BookingResponse> updateStatus(
             @PathVariable String id,
             @Valid @RequestBody UpdateBookingStatusRequest request
     ) {
         return ResponseEntity.ok(bookingService.updateStatus(id, request));
     }
-
+//cancel booking (user can cancel their own booking, admin can cancel any booking)
     @PatchMapping("/{id}/cancel")
-    public ResponseEntity<BookingResponse> cancel(
-            @PathVariable String id,
-            @RequestBody CancelBookingRequest request
-    ) {
-        return ResponseEntity.ok(bookingService.cancel(id, request));
-    }
+    // public ResponseEntity<BookingResponse> cancel(
+    //         @PathVariable String id,
+    //         @RequestBody CancelBookingRequest request
+    // ) {
+    //     return ResponseEntity.ok(bookingService.cancel(id, request));
+    // }
 }

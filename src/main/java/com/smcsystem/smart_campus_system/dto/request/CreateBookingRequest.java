@@ -7,15 +7,16 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+// DTO for creating a new booking request
 @Data
-public class CreateBookingRequest {
+// public class CreateBookingRequest {
 
-    @NotBlank(message = "Resource id is required")
-    private String resourceId;
+//     @NotBlank(message = "Resource id is required")
+//     private String resourceId;
 
-    @NotNull(message = "Start date/time is required")
-    @Future(message = "Start time must be in the future")
-    private LocalDateTime startDateTime;
+//     @NotNull(message = "Start date/time is required")
+//     @Future(message = "Start time must be in the future")
+//     private LocalDateTime startDateTime;
 
     @NotNull(message = "End date/time is required")
     @Future(message = "End time must be in the future")
